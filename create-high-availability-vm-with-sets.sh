@@ -37,7 +37,7 @@ az network nsg rule create \
     --description "Allow inbound on port 80."
 
 # Create the NIC
-for i in `seq 1 2 3`; do
+for i in `seq 1 3`; do
   echo '------------------------------------------'
   echo 'Creating webNic'$i
   az network nic create \
@@ -54,7 +54,7 @@ echo 'Creating an availability set'
 az vm availability-set create -n portalAvailabilitySet -g $RgName
 
 # Create 2 VM's from a template
-for i in `seq 1 2 3`; do
+for i in `seq 1 3`; do
     echo '------------------------------------------'
     echo 'Creating webVM'$i
     az vm create \
